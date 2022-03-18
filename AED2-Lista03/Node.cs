@@ -29,5 +29,4 @@ namespace AED2_Lista03
             this.next = next;
         }
     }
-    }
 }
