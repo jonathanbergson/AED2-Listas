@@ -80,5 +80,33 @@ namespace AED2_Lista03
 
             return l3;
         }
+
+        public static List Intercalation(List l1, List l2)
+        {
+            List l3 = new List();
+
+            Node n1 = l1.head.Next;
+            Node n2 = l2.head.Next;
+            while (n1 != null || n2 != null)
+            {
+                Score s1 = new Score(n1.Score.Name, n1.Score.Value, n1.Score.Date);
+                Score s2 = new Score(n2.Score.Name, n2.Score.Value, n2.Score.Date);
+
+                if (n1.Score.Value < n2.Score.Value)
+                {
+                    l3.Push(s1);
+                    l3.Push(s2);
+                } else
+                {
+                    l3.Push(s2);
+                    l3.Push(s1);
+                }
+
+                n1 = n1.Next;
+                n2 = n2.Next;
+            }
+
+            return l3;
+        }
     }
 }
