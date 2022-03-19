@@ -60,8 +60,8 @@ namespace AED2_Lista03
 
             Score deleted = tail.Score;
 
-            Node node = head;
-            while(node.Next != tail)
+            Node node = head.Next;
+            while(node != null)
             {
                 node = node.Next;
             }
@@ -70,6 +70,58 @@ namespace AED2_Lista03
             tail.Next = null;
 
             return deleted;
+        }
+
+        public List Revert()
+        {
+            List reversed = new List();
+
+            Node node = head.Next;
+            while (node != null)
+            {
+                Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                reversed.Prepend(score);
+                node = node.Next;
+            }
+
+            return reversed;
+        }
+
+        public List RemoveOdd()
+        {
+            List removed = new List();
+
+            Node node = head.Next;
+            while (node != null)
+            {
+                if (node.Score.Value % 2 == 0)
+                {
+                    Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                    removed.Push(score);
+                }
+                node = node.Next;
+            }
+
+            return removed;
+        }
+
+        public Score GetMinimum()
+        {
+            int minValue = Int32.MaxValue;
+            Score minScore = head.Next.Score;
+
+            Node node = head.Next;
+            while (node != null)
+            {
+                if (node.Score.Value < minValue)
+                {
+                    minScore = node.Score;
+                    minValue = node.Score.Value;
+                }
+                node = node.Next;
+            }
+
+            return minScore;
         }
 
         public bool Search(Score score)
@@ -81,7 +133,8 @@ namespace AED2_Lista03
             {
                 if (Score.IsEqual(score, node.Score))
                 {
-                    Console.WriteLine($"\tNome: {node.Score.Name} - Score: {node.Score.Value} - Data: {node.Score.Date}");
+                    //Console.Write("\tScore encontrado... ");
+                    //Console.WriteLine($"\tNome: {node.Score.Name} - Score: {node.Score.Value} - Data: {node.Score.Date}");
                     hasScore = true;
                     break;
                 }
@@ -151,6 +204,53 @@ namespace AED2_Lista03
 
                 n1 = n1.Next;
                 n2 = n2.Next;
+            }
+
+            return l3;
+        }
+
+        public static List Union(List l1, List l2)
+        {
+            List l3 = new List();
+
+            Node node = l1.head.Next;
+            while (node != null)
+            {
+                if (l3.Search(node.Score) == false)
+                {
+                    Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                    l3.Push(score);
+                }
+                node = node.Next;
+            }
+
+            node = l2.head.Next;
+            while (node != null)
+            {
+                if (l3.Search(node.Score) == false)
+                {
+                    Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                    l3.Push(score);
+                }
+                node = node.Next;
+            }
+
+            return l3;
+        }
+
+        public static List Intersection(List l1, List l2)
+        {
+            List l3 = new List();
+
+            Node node = l1.head.Next;
+            while (node != null)
+            {
+                if (l2.Search(node.Score) == true && l3.Search(node.Score) == false)
+                {
+                    Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                    l3.Push(score);
+                }
+                node = node.Next;
             }
 
             return l3;
