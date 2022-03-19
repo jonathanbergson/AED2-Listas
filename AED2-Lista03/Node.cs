@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AED2_Lista03
+﻿namespace AED2_Lista03
 {
     class Node
     {
@@ -28,6 +22,5 @@ namespace AED2_Lista03
             this.score = score;
             this.next = next;
         }
-    }
     }
 }

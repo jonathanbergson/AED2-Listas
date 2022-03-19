@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AED2_Lista03
+﻿namespace AED2_Lista03
 {
     class Score
     {
@@ -32,6 +26,17 @@ namespace AED2_Lista03
             this.value = value;
             this.name = name;
             this.date = date;
+        }
+
+        public static bool IsEqual(Score s1, Score s2)
+        {
+            if (s1.Name == s2.Name && s1.Value == s2.Value && s1.Date == s2.Date)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }
