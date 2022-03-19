@@ -25,7 +25,7 @@ namespace AED2_Lista03
             }
         }
 
-        public void Add(Score score)
+        public void Push(Score score)
         {
             Node node = new Node(score, null);
             tail.Next = node;
@@ -76,7 +76,7 @@ namespace AED2_Lista03
         {
             Node node = head.Next;
             bool hasScore = false;
-            
+
             while (node != null)
             {
                 if (Score.IsEqual(score, node.Score))
@@ -109,10 +109,49 @@ namespace AED2_Lista03
         {
             List l3 = new List();
 
-            l3.head.Next = l1.head.Next;
-            l3.tail = l1.tail;
-            l3.tail.Next = l2.head.Next;
-            l3.tail = l2.tail;
+            Node node = l1.head.Next;
+            while (node != null)
+            {
+                Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                l3.Push(score);
+                node = node.Next;
+            }
+
+            node = l2.head.Next;
+            while (node != null)
+            {
+                Score score = new Score(node.Score.Name, node.Score.Value, node.Score.Date);
+                l3.Push(score);
+                node = node.Next;
+            }
+
+            return l3;
+        }
+
+        public static List Intercalation(List l1, List l2)
+        {
+            List l3 = new List();
+
+            Node n1 = l1.head.Next;
+            Node n2 = l2.head.Next;
+            while (n1 != null || n2 != null)
+            {
+                Score s1 = new Score(n1.Score.Name, n1.Score.Value, n1.Score.Date);
+                Score s2 = new Score(n2.Score.Name, n2.Score.Value, n2.Score.Date);
+
+                if (n1.Score.Value < n2.Score.Value)
+                {
+                    l3.Push(s1);
+                    l3.Push(s2);
+                } else
+                {
+                    l3.Push(s2);
+                    l3.Push(s1);
+                }
+
+                n1 = n1.Next;
+                n2 = n2.Next;
+            }
 
             return l3;
         }
