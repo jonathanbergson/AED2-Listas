@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AED2_Lista01
+namespace AED2_01
 {
     class Program
     {

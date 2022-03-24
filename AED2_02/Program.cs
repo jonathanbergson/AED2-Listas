@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AED2_Lista02
+namespace AED2_02
 {
     class Program
     {
@@ -8,8 +8,8 @@ namespace AED2_Lista02
 
         static void Main(string[] args)
         {
-            //ReadFile();
-            WriteFile();
+            ReadFile();
+            //WriteFile();
             //CallAllListMethods();
         }
 

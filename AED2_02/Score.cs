@@ -1,4 +1,4 @@
-﻿namespace AED2_Lista02
+﻿namespace AED2_02
 {
     class Score
     {

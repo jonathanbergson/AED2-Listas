@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>AED2_Lista02</RootNamespace>
+    <RootNamespace>AED2_02</RootNamespace>
   </PropertyGroup>
 
 </Project>
