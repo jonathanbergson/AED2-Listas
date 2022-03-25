@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AED2_04
 {
-    // NOTE: Cardapio
+    // NOTE: Cardápio
     class PlateMenu
     {
     }

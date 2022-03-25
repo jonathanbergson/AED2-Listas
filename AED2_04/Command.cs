@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AED2_04
 {
     // NOTE: Comanda
-    class Control
+    class Command
     {
     }
 }
