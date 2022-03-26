@@ -8,7 +8,7 @@
 
         static string InvertRec(int n, int index = 0)
         {
-            return "string"
+            return "string";
         }
     }
 }
