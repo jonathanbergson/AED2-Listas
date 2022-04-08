@@ -37,14 +37,12 @@ namespace AED2_02
             {
                 throw new Exception($"[Exception] Deu ruim, a lista já está cheia!");
             }
-            else
-            {
-                int index = count;
-                list[index] = score;
-                count++;
 
-                return index;
-            }
+            int index = count;
+            list[index] = score;
+            count++;
+
+            return index;
         }
 
         public void Add(Score score, int index)
@@ -53,19 +51,18 @@ namespace AED2_02
             {
                 throw new Exception($"[Exception] Deu ruim, a lista já está cheia!");
             }
-            else if (index < 0 || index >= list.Length)
+
+            if (index < 0 || index >= list.Length)
             {
                 throw new Exception($"[Exception] Deu ruim, posição inválida!");
             }
-            else
+
+            for (int i = count; i > index; i--)
             {
-                for (int i = count; i > index; i--)
-                {
-                    list[i] = list[i - 1];
-                }
-                list[index] = score;
-                count++;
+                list[i] = list[i - 1];
             }
+            list[index] = score;
+            count++;
         }
 
         public Score Shift()
