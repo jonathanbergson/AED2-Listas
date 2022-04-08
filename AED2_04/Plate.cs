@@ -11,6 +11,7 @@ namespace AED2_04
         private int _code;
         private string _name;
         private float _price;
+        private bool _enable = true;
 
         public Plate(int code, string name, float price)
         {
