@@ -1,13 +1,13 @@
 ﻿namespace AED2_05_Ex01
 {
-    class Node
+    internal class Node
     {
         public char Character { get; }
         public Node Next { get; }
 
-        public Node(char charater, Node next)
+        public Node(char character, Node next)
         {
-            Character = charater;
+            Character = character;
             Next = next;
         }
     }

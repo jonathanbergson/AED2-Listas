@@ -2,10 +2,10 @@
 
 namespace AED2_05_Ex01
 {
-    class Pile
+    internal class Stack
     {
-        private Node _top = null;
-        private int _count = 0;
+        private Node _top;
+        private int _count;
 
         public int Count => _count;
 

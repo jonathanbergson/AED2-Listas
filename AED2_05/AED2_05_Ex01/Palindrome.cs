@@ -2,30 +2,29 @@
 
 namespace AED2_05_Ex01
 {
-    class Palindrome
+    internal static class Palindrome
     {
-        public static bool Check(string word)
+        public static void Check(string word)
         {
-            Pile pile = new Pile();
+            Stack stack = new Stack();
             bool isPalindrome = true;
 
-            for (int i = 0; i < word.Length; i++)
+            foreach (var letter in word)
             {
-                pile.Add(word[i]);
+                stack.Add(letter);
             }
 
-            for (int i = 0; i < word.Length; i++)
+            foreach (var letter in word)
             {
-                char lastWord = pile.Remove();
-                if (Char.ToLower(word[i]) != Char.ToLower(lastWord))
-                {
-                    isPalindrome = false;
-                }
+                char currentLetter = char.ToLower(letter);
+                char stackLetter = char.ToLower(stack.Remove());
+                if (currentLetter == stackLetter) continue;
+
+                isPalindrome = false;
+                break;
             }
 
             Console.WriteLine($"\tA palavra '{word}' \t\té um palíndromo? {isPalindrome}.");
-
-            return isPalindrome;
         }
     }
 }
