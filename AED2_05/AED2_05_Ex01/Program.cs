@@ -6,7 +6,13 @@ namespace AED2_05_Ex01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine();
+            Palindrome.Check("subinoonibus");
+            Palindrome.Check("Arara");
+            Palindrome.Check("casa");
+            Palindrome.Check("miRim");
+            Palindrome.Check("bolinha");
+            Palindrome.Check("socOS");
         }
     }
 }
