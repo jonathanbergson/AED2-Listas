@@ -1,0 +1,13 @@
+A. Bubble Sort
+O algoritmo bubble sort faz a ordenação percorrendo todo o vetor diversas vezes, sempre fazendo a comparação dois a dois.
+Comparando o índice 0 com o 1, depois o índice 1 com o 2, depois o 2 com o 3 e assim sucessivamente.
+Depois de percorrer todo o vetor, ele volta a percorrer o vetor quantas vezes forem necessárias até que todos os valores estejam ordenados.
+
+B. Selection Sort
+O algorítimo selection sort trabalha com dois loops ao mesmo tempo, o primeiro loop é responsável por manter um valor que pode ser trocado.
+O segundo loop percorrer todo o vetor buscando o menor valor, depois de encontrar o menor valor ele troca esse valor com o valor reservado pelo primeiro loop.
+
+C. Quick Sort
+O algoritmo quick sort trabalha dividindo o vetor em dois ou mais grupos, depois de selecionar um valor como pivô.
+O algoritmo irá dividir o primeiro grupo apenas com valores menores que o pivô e o segundo grupo com valores maiores que o pivô.
+Depois fazer essa operação chamada de partição ele irá ordenas cada um dos grupos. Depois de ordenar ambos os grupos todo o vetor estará ordenado.

@@ -1,0 +1,5 @@
+1. Nó são todos os valores ou objetos salvos em uma árvore.
+
+2. Folha é uma nó da árvore que não possui nenhum filho.
+
+3. Altura de uma árvore corresponde a quantidade de níveis que se precisa navegar para chegar no filho mais distante.
